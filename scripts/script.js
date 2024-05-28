@@ -4,7 +4,7 @@ let chart;
 
 window.onload = function () {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'buscar_saldos.php', true);
+    xhr.open('GET', 'buscar_dados.php', true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             let response = xhr.responseText;
@@ -20,8 +20,6 @@ window.onload = function () {
     xhr.send();
     atualizarGrafico();
 };
-
-
 
 function enviarTransacaoParaBackend(transacao) {
     const xhr = new XMLHttpRequest();
