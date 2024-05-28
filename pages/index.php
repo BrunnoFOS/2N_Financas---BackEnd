@@ -64,10 +64,9 @@ if (isset($_POST["email"]) && isset($_POST["senha"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2n - Sistema Bancário</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Inclui o arquivo CSS para estilos personalizados -->
+    <link rel="stylesheet" href="styles.css"> <
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* Estilos CSS */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -133,9 +132,7 @@ if (isset($_POST["email"]) && isset($_POST["senha"])) {
     <div class="container">
         <h1>Login - 2N Finanças</h1>
         <?php
-        // Verifica se os campos de e-mail e senha foram submetidos
         if (isset($_POST["email"]) && isset($_POST["senha"])) {
-            // Exibe mensagens de erro com base nas variáveis de erro
             if ($erro_email && $erro_senha) {
                 echo '<div class="alert alert-danger" role="alert">Insira seu e-mail e senha.</div>';
             } elseif ($erro_email) {
@@ -147,7 +144,6 @@ if (isset($_POST["email"]) && isset($_POST["senha"])) {
             }
         }
         ?>
-        <!-- Formulário de login -->
         <form action="" method="POST">
             <label for="email">E-mail</label>
             <input type="text" id="email" name="email" placeholder="Digite seu e-mail.">
@@ -155,7 +151,7 @@ if (isset($_POST["email"]) && isset($_POST["senha"])) {
             <input type="password" id="senha" name="senha" placeholder="Digite sua senha.">
             <button type="submit">Entrar</button>
             <p>
-                <a href="registro.php">Registrar</a> <!-- Link para a página de registro -->
+                <a href="registro.php">Registrar</a>
             </p>
         </form>
     </div>

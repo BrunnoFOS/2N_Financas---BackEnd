@@ -9,7 +9,6 @@ window.onload = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             let response = xhr.responseText;
             if (response) {
-                // Se houver uma resposta válida, faça o parse do JSON
                 response = JSON.parse(response);
                 document.getElementById('saldoTotal').textContent = formatarNumero(response.saldo_total || 0);
                 document.getElementById('saldoCaixa').textContent = formatarNumero(response.saldo_caixa || 0);

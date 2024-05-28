@@ -7,7 +7,6 @@ $response = array();
 if (isset($_SESSION['id'])) {
     $id_usuario = $_SESSION['id'];
 
-    // Buscar saldos
     $result_saldos = $mysqli->query("SELECT * FROM saldos WHERE id_usuario = $id_usuario");
     if ($result_saldos && $result_saldos->num_rows > 0) {
         $response['saldos'] = $result_saldos->fetch_assoc();
@@ -15,7 +14,6 @@ if (isset($_SESSION['id'])) {
         $response['saldos'] = array("error" => "Nenhum saldo encontrado");
     }
 
-    // Buscar histórico de transações
     $result_historico = $mysqli->query("SELECT * FROM historico_transacoes WHERE id_usuario = $id_usuario ORDER BY data DESC");
     if ($result_historico && $result_historico->num_rows > 0) {
         $historico = array();
@@ -27,7 +25,6 @@ if (isset($_SESSION['id'])) {
         $response['historico'] = array("error" => "Nenhum histórico encontrado");
     }
 
-    // Buscar dados do gráfico
     $result_grafico = $mysqli->query("SELECT * FROM dados_grafico WHERE id_usuario = $id_usuario ORDER BY data ASC");
     if ($result_grafico && $result_grafico->num_rows > 0) {
         $grafico = array();

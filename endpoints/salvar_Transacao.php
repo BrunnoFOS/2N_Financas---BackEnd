@@ -41,4 +41,3 @@ if (isset($_SESSION['id']) && isset($_POST['descricao']) && isset($_POST['valor'
     error_log("Parâmetros ausentes na requisição", 0);
     echo json_encode(array("error" => "Parâmetros ausentes"));
 }
-?>
